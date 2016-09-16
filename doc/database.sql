@@ -1,7 +1,7 @@
 create database webdemo;
-DROP TABLE IF EXISTS `user_t`;
+DROP TABLE IF EXISTS `user_info`;
 
-CREATE TABLE `user_t` (
+CREATE TABLE `user_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(40) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -9,4 +9,4 @@ CREATE TABLE `user_t` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-insert  into `user_t`(`id`,`user_name`,`password`,`age`) values (1,'测试','sfasgfaf',24);
+insert  into `user_info`(`id`,`user_name`,`password`,`age`) values (1,'测试','sfasgfaf',24);
