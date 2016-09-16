@@ -15,7 +15,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
     <style type="text/css">
         body {
             padding-top: 60px;
