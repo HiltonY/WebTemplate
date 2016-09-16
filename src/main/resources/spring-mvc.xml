@@ -47,8 +47,8 @@
         <property name="maxInMemorySize" value="40960" />
     </bean>
     
-    <mvc:resources mapping="/bootstrap/**" location="/bootstrap"/>
-    <mvc:resources mapping="/images/**" location="/images"/>
-    <mvc:resources mapping="/js/**" location="/js"/>
+    <!--<mvc:resources mapping="/bootstrap/**" location="/bootstrap"/>-->
+    <!--<mvc:resources mapping="/images/**" location="/images"/>-->
+    <!--<mvc:resources mapping="/js/**" location="/js"/>-->
 
 </beans>
