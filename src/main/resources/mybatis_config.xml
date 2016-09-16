@@ -5,18 +5,18 @@
 <!-- 注意：每个标签必须按顺序写，不然蛋疼的DTD会提示错误：The content of element type "configuration" must match "(properties?,settings?,typeAliases?,typeHandlers?,objectFactory?,objectWrapperFactory?,plugins?,environments?,mappers?)". -->
 <configuration>
     <!-- 属性配置 -->
-    <properties resource="com/mybatis/config/sqlserver-jdbc-connection.properties">
-        <!-- 相同属性:最高优先级的属性是那些作为方法参数的，然后是资源/url 属性，最后是 properties元素中指定的属性 -->
-        <!-- 		<property name="username" value="sa"/> -->
-        <!-- 		<property name="password" value="phoenix"/> -->
-    </properties>
+    <!--<properties resource="com/mybatis/config/sqlserver-jdbc-connection.properties">-->
+        <!--&lt;!&ndash; 相同属性:最高优先级的属性是那些作为方法参数的，然后是资源/url 属性，最后是 properties元素中指定的属性 &ndash;&gt;-->
+        <!--&lt;!&ndash; 		<property name="username" value="sa"/> &ndash;&gt;-->
+        <!--&lt;!&ndash; 		<property name="password" value="phoenix"/> &ndash;&gt;-->
+    <!--</properties>-->
 
     <!-- 设置缓存和延迟加载等等重要的运行时的行为方式 -->
     <settings>
         <!-- 设置超时时间，它决定驱动等待一个数据库响应的时间  -->
         <setting name="defaultStatementTimeout" value="25000"/>
         <!-- 这个配置使全局的映射器启用或禁用缓存  -->
-        <setting name="cacheEnabled" value="true"/>
+        <setting name="cacheEnabled" value="false"/>
 
         <!-- 全局启用或禁用延迟加载。当禁用时，所有关联对象都会即时加载  -->
         <!-- 		<setting name="lazyLoadingEnabled" value="true"/> -->
