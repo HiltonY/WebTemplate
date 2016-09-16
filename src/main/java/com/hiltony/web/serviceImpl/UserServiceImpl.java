@@ -1,9 +1,11 @@
 package com.hiltony.web.serviceImpl;
 
+import com.hiltony.web.mapper.UserInfoMapper;
 import com.hiltony.web.model.UserInfo;
 import com.hiltony.web.service.UserService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -13,9 +15,11 @@ import java.util.List;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
+    @Resource
+    private UserInfoMapper userInfoMapper;
 
     public UserInfo getUserById(int id) {
-        return null;
+        return userInfoMapper.selectByPrimaryKey(id);
     }
 
     public List<UserInfo> getUsers() {

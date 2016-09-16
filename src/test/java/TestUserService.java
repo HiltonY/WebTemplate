@@ -14,8 +14,7 @@ import com.alibaba.fastjson.JSON;
  * Created by YX on 2016/9/11.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:spring_config.xml",
-        "classpath:spring-mybatis.xml" })
+@ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class TestUserService {
 
     private static final Logger LOGGER = Logger

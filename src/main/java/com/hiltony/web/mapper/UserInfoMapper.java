@@ -1,12 +1,15 @@
 package com.hiltony.web.mapper;
 
 import com.hiltony.web.model.UserInfo;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by YX on 2016/9/11.
  */
+
 public interface UserInfoMapper {
 
     int deleteByPrimaryKey(Integer id);
