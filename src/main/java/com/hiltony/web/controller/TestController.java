@@ -18,4 +18,9 @@ public class TestController {
     public String bootstrap(HttpServletRequest request, Model model){
         return "bootstrap";
     }
+
+    @RequestMapping("/temp")
+    public String temp(HttpServletRequest request, Model model){
+        return "temp";
+    }
 }
