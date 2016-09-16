@@ -2,3 +2,6 @@
 .idea
 *.iml
 /target
+/logs
+src/main/webapp/WEB-INF/classes/
+/out
