@@ -6,12 +6,9 @@ package com.hiltony.web.model;
 public class UserInfo {
 
     private Integer id;
-
-    private String uname;
-
-    private Integer unumber;
-
-//    private List<CourseInfo> courseInfos;
+    private String userName;
+    private String password;
+    private Long age;
 
     public Integer getId() {
         return id;
@@ -21,25 +18,27 @@ public class UserInfo {
         this.id = id;
     }
 
-    public String getUname() {
-        return uname;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname == null ? null : uname.trim();
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public Integer getUnumber() {
-        return unumber;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUnumber(Integer unumber) {
-        this.unumber = unumber;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-//    public List<CourseInfo> getCourseInfos() {
-//        return courseInfos;
-//    }
+    public Long getAge() {
+        return age;
+    }
 
-
+    public void setAge(Long age) {
+        this.age = age;
+    }
 }

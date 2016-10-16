@@ -3,14 +3,13 @@
 <mapper namespace="com.hiltony.web.mapper.UserInfoMapper">
     <resultMap id="BaseResultMap" type="UserInfo">
         <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="uname" property="uname" jdbcType="VARCHAR" />
+        <result column="username" property="uname" jdbcType="VARCHAR" />
         <result column="unumber" property="unumber" jdbcType="INTEGER" />
     </resultMap>
     <sql id="Base_Column_List">
-        id, user_name, password,age
+        id, username, password,age
     </sql>
-    <select id="selectByPrimaryKey" resultMap="BaseResultMap"
-            parameterType="java.lang.Integer">
+    <select id="selectByPrimaryKey" resultType="UserInfo">
         select
         <include refid="Base_Column_List" />
         from user_info
