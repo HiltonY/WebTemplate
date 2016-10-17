@@ -1,0 +1,20 @@
+<form class="form-horizontal" id="settingfm">
+    <div class="control-group">
+        <label class="control-label">仓库类型</label>
+        <div class="controls">
+            <span class="formitem_rqr">
+               <select placeholder="请选择" r-model={storageId}>
+                   {#list customesTypeList as item}
+                        <option value="{item.id}"    >{item.name}</option>
+                   {/list}
+                </select>
+           </span>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputPassword">帐号</label>
+        <div class="controls">
+            <input type="text" name="account" r-model={account} />
+        </div>
+    </div>
+</form>

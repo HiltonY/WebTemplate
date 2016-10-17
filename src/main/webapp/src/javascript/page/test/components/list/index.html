@@ -1,0 +1,54 @@
+<div class="filter">
+ <div class="form-inline f-mgl">
+    <div class="form-group">
+      <label class="control-label">商品货号：</label>
+      <input name="itemNo" class="form-control" r-model={condition.itemNo} placeholder="请输入商品货号"/>
+    </div>
+    <div class="form-group f-mgl">
+      <label class="control-label f-tar">预计发货时间：</label>
+      <datepicker2 name="startTime" select={condition.startTime} rangeEnd={condition.endTime}></datepicker2>
+      <label class="control-label">至</label>
+      <datepicker2 name="endTime" select={condition.endTime} range={condition.startTime}></datepicker2>
+    </div>
+  </div>
+  <div class="form-inline f-mgl f-mgtb">
+    <div class="form-group f-mgl">
+      <label class="control-label">商品名称：</label>
+      <input name="itemName" class="form-control" r-model={condition.itemName} placeholder="请输入商品名称"/>
+    </div>
+    <div class="form-group f-mgl">
+      <button class="btn btn-primary btn-block" on-click={this.search()}>查询</button>
+    </div>
+  </div>
+</div>
+
+
+<table class="table table-striped">
+    <thead>
+        <th>仓库ID</th>
+        <th>仓库名称</th>
+        <th>登录帐号</th>
+        <th>帐号类型</th>
+        <th>状态</th>
+        <th>操作</th>
+    </thead>
+    <tbody>
+        {#list list as item}
+            <tr>
+                <td>{item.warehouseId || ''}</td>
+                <td>{item.warehouseName || ''}</td>
+                <td>{item.account || ''}</td>
+                <td>{item.type==1?"超级帐号":"普通帐号"}</td>
+                <td>{item.status==1?"有效":"无效"}</td>
+                <td><a href="javascript:void(0)" on-click={this.onremove(item,item_index)}>删除</a>
+                    {#if item.status!=1}<a href="javascript:void(0)" on-click={this.open(item)}>启用</a>{/if}
+                    {#if item.type!=1}<a href="javascript:void(0)" on-click={this.setMainAccount(item)}>设为主帐号</a>{/if}
+                </td>
+            </tr>
+        {/list}
+    </tbody>
+</table>
+
+<div class="pagination pagination-right">
+    <pager total={Math.ceil(total/10)} currentPage={current} totalCount = {total} on-nav={this.onnav($event)}></pager>
+</div>
