@@ -2,6 +2,7 @@ package com.hiltony.web.model;
 
 /**
  * Created by YX on 2016/9/11.
+ *
  */
 public class UserInfo {
 

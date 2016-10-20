@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class MemberController {
 
     @Resource
     private UserService userService;
