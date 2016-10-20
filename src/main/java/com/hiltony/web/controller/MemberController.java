@@ -16,13 +16,13 @@ import javax.servlet.http.HttpServletRequest;
  */
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/member")
 public class MemberController {
 
     @Resource
     private UserService userService;
 
-    @RequestMapping("/showUser")
+    @RequestMapping("/listMember")
     public String toIndex(HttpServletRequest request, Model model){
         int userId = Integer.parseInt(request.getParameter("id"));
         UserInfo user = this.userService.getUserById(userId);
@@ -31,7 +31,7 @@ public class MemberController {
 
     }
 
-    @RequestMapping("/getUserInfo")
+    @RequestMapping("/getMemberInfo")
     @ResponseBody
     public UserInfo getUserInfo(){
         UserInfo userInfo  = userService.getUserById(1);
