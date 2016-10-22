@@ -98,7 +98,7 @@ desired effect
                             <td>${item.name}</td>
                             <td>${item.age}</td>
                             <td>${item.gender}</td>
-                            <td><#if item.status==1>男<#else>女</#if></td>
+                            <td><#if item.status==1>正常<#else>预警</#if></td>
                         </tr>
                         </#list>
                     </table>
