@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * Created by YX on 2016/9/16.
+ *
  */
 
 @Controller
@@ -34,6 +35,12 @@ public class MemberController {
         member.setAge(60);
         member.setStatus(1);
         List<Member> members = new ArrayList<Member>();
+        members.add(member);
+        member = new Member();
+        member.setName("测试名称2");
+        member.setGender(Gender.MAN.getDesc());
+        member.setAge(60);
+        member.setStatus(2);
         members.add(member);
         model.addAttribute("memberList", members);
         return "member";

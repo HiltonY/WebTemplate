@@ -81,6 +81,10 @@ desired effect
     <section class="content">
         <div class="row">
             <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">客户列表</h3>
+                </div>
                 <!-- general form elements -->
                 <div class="box-body">
                     <table id="example1" class="table table-bordered table-striped">
@@ -102,6 +106,19 @@ desired effect
                         </tr>
                         </#list>
                     </table>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">客户详情</h3>
+                    </div>
+                    <!-- general form elements -->
+                    <#--col-lg-6-->
+                    <div class="box-body">
+
+                    </div>
                 </div>
             </div>
     </section>
