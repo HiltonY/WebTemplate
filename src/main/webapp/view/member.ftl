@@ -93,16 +93,14 @@ desired effect
                         </tr>
                         </thead>
                         <tbody>
-                        <#list brandList as item>
+                        <#list memberList as item>
                         <tr>
                             <td>${item.name}</td>
                             <td>${item.age}</td>
-                            <td>Win 95+</td>
-                            <td> 4</td>
+                            <td>${item.gender}</td>
+                            <td><#if item.status==1>男<#else>女</#if></td>
                         </tr>
                         </#list>
-
-                        </tfoot>
                     </table>
                 </div>
             </div>

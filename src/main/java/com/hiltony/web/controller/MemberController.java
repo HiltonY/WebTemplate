@@ -1,6 +1,8 @@
 package com.hiltony.web.controller;
 
+import com.hiltony.web.model.Member;
 import com.hiltony.web.model.UserInfo;
+import com.hiltony.web.model.enmu.Gender;
 import com.hiltony.web.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -24,10 +28,15 @@ public class MemberController {
 
     @RequestMapping("/listMember")
     public String toIndex(HttpServletRequest request, Model model){
-        int userId = Integer.parseInt(request.getParameter("id"));
-        UserInfo user = this.userService.getUserById(userId);
-        model.addAttribute("user", user);
-        return "showUser";
+        Member member = new Member();
+        member.setName("测试名称");
+        member.setGender(Gender.MAN.getDesc());
+        member.setAge(60);
+        member.setStatus(1);
+        List<Member> members = new ArrayList<Member>();
+        members.add(member);
+        model.addAttribute("memberList", members);
+        return "member";
 
     }
 

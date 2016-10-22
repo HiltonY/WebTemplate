@@ -90,7 +90,9 @@ public class Member {
     private Long phoneNumber;
     private List<Contacter> contacters;
     private String medicalHistory;
-    private Gender gender;
+    private String gender;
+    private Integer age;
+    private Integer status;
 
     public String getName() {
         return name;
@@ -130,6 +132,30 @@ public class Member {
 
     public void setMedicalHistory(String medicalHistory) {
         this.medicalHistory = medicalHistory;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }
 

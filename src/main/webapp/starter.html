@@ -50,20 +50,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
       });
     }
     $(document).ready(function(){
+
+      $("#member").click(
+              function(){
+                $("#main_context").empty();
+                $("#main_context").load("/member/listMember");
+              }
+      );
       $("[href='#user']").click(function(){
-//        $("#main").toggle();
-//        $("#main").attr("val","更改文本")
         $("#main_context").empty();
-        $("#main_context").load("/test/main");
-//        getUserInfo();
+        $("#main_context").load("/member/listMember");
       });
 
-      $("[href='#track']").click(function(){
-//        $("#main").toggle();
-//        $("#main").attr("val","更改文本")
-        $("#main_context").empty();
-        $("#main_context").load("/model/track_watch/location_show.html #location_show_map");
-      });
     });
   </script>
 </head>
@@ -94,7 +92,7 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -292,7 +290,8 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#user"><i class="fa fa-link"></i> <span>用户管理</span></a></li>
+        <li id="member" class="active"><a href="#member"><i class="fa fa-link"></i> <span>客户管理</span></a></li>
+        <li><a href="#user"><i class="fa fa-link"></i> <span>用户管理2</span></a></li>
         <li><a href="#track"><i class="fa fa-link"></i> <span>轨迹监控</span></a></li>
 
         <li class="treeview">
@@ -360,7 +359,7 @@ desired effect
         <h3 class="control-sidebar-heading">Recent Activity</h3>
         <ul class="control-sidebar-menu">
           <li>
-            <a href="javascript::;">
+            <a href="javascript:;">
               <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
               <div class="menu-info">
@@ -376,7 +375,7 @@ desired effect
         <h3 class="control-sidebar-heading">Tasks Progress</h3>
         <ul class="control-sidebar-menu">
           <li>
-            <a href="javascript::;">
+            <a href="javascript:;">
               <h4 class="control-sidebar-subheading">
                 Custom Template Design
                 <span class="pull-right-container">
