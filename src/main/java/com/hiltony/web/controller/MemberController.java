@@ -7,6 +7,7 @@ import com.hiltony.web.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -53,6 +54,25 @@ public class MemberController {
         UserInfo userInfo  = userService.getUserById(1);
 
         return userInfo;
+    }
+
+    @RequestMapping(value = "/addMember",method = RequestMethod.POST)
+    @ResponseBody
+    public String addMember(Member member ,HttpServletRequest request){
+        System.out.println(member.getName());
+        return "success";
+    }
+
+    @RequestMapping("/memberDetail")
+    public String getMemberDetail(HttpServletRequest request, Model model){
+        Member member = new Member();
+        member.setName("测试名称");
+        member.setGender(Gender.MAN.getDesc());
+        member.setAge(60);
+        member.setStatus(1);
+        model.addAttribute("member", member);
+        return "member_detail";
+
     }
 
 }

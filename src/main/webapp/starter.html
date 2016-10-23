@@ -39,6 +39,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <![endif]-->
 
   <script type="text/javascript">
+      function addMember() {
+          var params = {};
+          params.name = $("#name").val();
+          params.birthday = $("#datepicker").val();
+          alert(params);
+          $.ajax({
+              type: 'POST',
+              url: "/member/addMember",
+              data: params,
+              success: function () {
+                  alert("成功");
+              },
+              dataType: "text"
+          });
+
+      }
     function getUserInfo() {
       $(function () {
         $.post("/user/getUserInfo",
