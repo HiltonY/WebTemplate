@@ -84,6 +84,25 @@ public class MemberController {
         return "success";
     }
 
+    @RequestMapping(value = "/updateMember",method = RequestMethod.POST)
+    @ResponseBody
+    public String updateMember(Member member ,HttpServletRequest request,Model model){
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(member.getBirthday());
+        Calendar current = Calendar.getInstance();
+
+        int age = calendar.get(Calendar.YEAR) - current.get(Calendar.YEAR);
+        calendar.add(Calendar.YEAR,age);
+        if (calendar.after(current)){
+            age+=1;
+        }
+        member.setAge(age);
+
+        memberService.updateMember(member);
+        return "success";
+    }
+
     @RequestMapping("/memberDetail")
     public String getMemberDetail(Member member,HttpServletRequest request, Model model){
 
