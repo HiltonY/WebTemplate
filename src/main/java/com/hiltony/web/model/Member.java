@@ -2,6 +2,7 @@ package com.hiltony.web.model;
 
 import com.hiltony.web.model.enmu.Gender;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -85,21 +86,31 @@ public class Member {
             this.releation = releation;
         }
     }
-    private String name;
+    private Long memberId;
+    private String memberName;
     private String address;
     private Long phoneNumber;
     private List<Contacter> contacters;
     private String medicalHistory;
     private String gender;
+    private Date birthday;
     private Integer age;
     private Integer status;
 
-    public String getName() {
-        return name;
+    public Long getMemberId() {
+        return memberId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
+    }
+
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
     }
 
     public String getAddress() {
@@ -156,6 +167,14 @@ public class Member {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 }
 

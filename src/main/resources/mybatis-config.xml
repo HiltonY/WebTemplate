@@ -6,5 +6,6 @@
 <configuration>
     <typeAliases>
         <typeAlias type="com.hiltony.web.model.UserInfo" alias="UserInfo"/>
+        <typeAlias type="com.hiltony.web.model.Member" alias="Member"/>
     </typeAliases>
 </configuration>

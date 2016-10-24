@@ -36,50 +36,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="/js/bootstrap/bootstrap.min.js"></script>
   <!-- AdminLTE App -->
   <script src="/js/app.min.js"></script>
+    <!--客户页面js-->
+    <script src="/js/member/member_detail.js"></script>
   <![endif]-->
 
-  <script type="text/javascript">
-      function addMember() {
-          var params = {};
-          params.name = $("#name").val();
-          params.birthday = $("#datepicker").val();
-          alert(params);
-          $.ajax({
-              type: 'POST',
-              url: "/member/addMember",
-              data: params,
-              success: function () {
-                  alert("成功");
-              },
-              dataType: "text"
-          });
+    <script type="text/javascript">
 
-      }
-    function getUserInfo() {
-      $(function () {
-        $.post("/user/getUserInfo",
-                {
-                },
-                function (item) {
+        function getUserInfo() {
+            $(function () {
+                $.post("/user/getUserInfo",
+                        {},
+                        function (item) {
 //                  $("h1").html(data.userName);
-                });
-      });
-    }
-    $(document).ready(function(){
+                        });
+            });
+        }
+        $(document).ready(function () {
 
-      $("#member").click(
-              function(){
+            $("#member").click(
+                    function () {
+                        $("#main_context").empty();
+                        $("#main_context").load("/member/listMember");
+                        $("#member-detail-box").empty();
+                        $("#member-detail-box").load("/member/memberDetail");
+                    }
+            );
+            $("[href='#user']").click(function () {
                 $("#main_context").empty();
                 $("#main_context").load("/member/listMember");
-              }
-      );
-      $("[href='#user']").click(function(){
-        $("#main_context").empty();
-        $("#main_context").load("/member/listMember");
-      });
+            });
 
-    });
-  </script>
+        });
+    </script>
 </head>
 <!--
 BODY TAG OPTIONS:
