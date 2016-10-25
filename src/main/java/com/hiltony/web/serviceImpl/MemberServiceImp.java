@@ -36,7 +36,8 @@ public class MemberServiceImp implements MemberService {
     @Override
     public Member addMember(Member member) {
         try{
-        return memberMapper.addMember(member);
+            memberMapper.addMember(member);
+            return member;
         } catch (Exception e){
             e.printStackTrace();
             return null;

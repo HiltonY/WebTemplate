@@ -92,7 +92,7 @@ public class MemberController {
         calendar.setTime(member.getBirthday());
         Calendar current = Calendar.getInstance();
 
-        int age = calendar.get(Calendar.YEAR) - current.get(Calendar.YEAR);
+        int age = current.get(Calendar.YEAR)-calendar.get(Calendar.YEAR) ;
         calendar.add(Calendar.YEAR,age);
         if (calendar.after(current)){
             age+=1;

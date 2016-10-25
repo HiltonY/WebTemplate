@@ -61,10 +61,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         $("#member-detail-box").load("/member/memberDetail");
                     }
             );
+          $("#track-intime").click(
+                  function () {
+                        $("#main_context").empty();
+                        $("#main_context").load("/track/history");
+                  }
+          )
             $("[href='#user']").click(function () {
                 $("#main_context").empty();
                 $("#main_context").load("/member/listMember");
             });
+          $("#member").click();
 
         });
     </script>
@@ -295,18 +302,16 @@ desired effect
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
         <li id="member" class="active"><a href="#member"><i class="fa fa-link"></i> <span>客户管理</span></a></li>
-        <li><a href="#user"><i class="fa fa-link"></i> <span>用户管理2</span></a></li>
-        <li><a href="#track"><i class="fa fa-link"></i> <span>轨迹监控</span></a></li>
-
+        <li id="user"><a href="#user"><i class="fa fa-link"></i> <span>账户管理</span></a></li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>多层菜单</span>
+          <a href="#"><i class="fa fa-link"></i> <span>轨迹监控</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">2级菜单1</a></li>
-            <li><a href="#">2级菜单2</a></li>
+            <li id="track-intime"><a href="#track-intime">实时轨迹</a></li>
+            <li id="track-history"><a href="#track-history">历史轨迹</a></li>
           </ul>
         </li>
       </ul>

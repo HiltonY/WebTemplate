@@ -14,7 +14,7 @@ public interface MemberMapper {
 
     List<Member> getMemberList(Member member);
 
-    Member addMember(Member member);
+    int addMember(Member member);
 
     int updateMember(Member member);
 }
