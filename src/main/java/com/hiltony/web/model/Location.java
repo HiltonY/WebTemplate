@@ -13,6 +13,15 @@ public class Location {
     private Integer xPosition;
     private Integer yPosition;
     private Date date;
+    private Integer upOrDown; //1 上楼 -1 下楼 0
+
+    public Integer getUpOrDown() {
+        return upOrDown;
+    }
+
+    public void setUpOrDown(Integer upOrDown) {
+        this.upOrDown = upOrDown;
+    }
 
     public Date getDate() {
         return date;

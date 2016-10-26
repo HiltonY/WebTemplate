@@ -1,6 +1,8 @@
 package com.hiltony.web.controller;
 
+import com.hiltony.web.model.Location;
 import com.hiltony.web.model.Member;
+import com.hiltony.web.model.Track;
 import com.hiltony.web.model.UserInfo;
 import com.hiltony.web.service.MemberService;
 import com.hiltony.web.service.UserService;
@@ -34,7 +36,15 @@ public class TrackController {
 
     @RequestMapping("/history")
     public String getTrack(Member member,HttpServletRequest request, Model model){
-        model.addAttribute("member", memberService.getMemberById(member));
+        List<Track> trackControllerList = new ArrayList<>();
+        Track track1 = new Track();
+        track1.setFloor(1);
+        List<Location> locationList1 = new ArrayList<>();
+        Location location11  = new Location();
+        location11.setxPosition(100);
+        location11.setyPosition(200);
+        trackControllerList.add(track1);
+        model.addAttribute("trackhistory", trackControllerList);
         return "location_show";
 
     }
