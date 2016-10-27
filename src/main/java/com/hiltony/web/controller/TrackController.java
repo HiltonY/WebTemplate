@@ -5,6 +5,7 @@ import com.hiltony.web.model.Member;
 import com.hiltony.web.model.Track;
 import com.hiltony.web.model.UserInfo;
 import com.hiltony.web.service.MemberService;
+import com.hiltony.web.service.TrackService;
 import com.hiltony.web.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,18 +33,13 @@ public class TrackController {
     private UserService userService;
 
     @Resource
-    private MemberService memberService;
+    private TrackService trackService;
 
     @RequestMapping("/history")
     public String getTrack(Member member,HttpServletRequest request, Model model){
-        List<Track> trackControllerList = new ArrayList<>();
-        Track track1 = new Track();
-        track1.setFloor(1);
-        List<Location> locationList1 = new ArrayList<>();
-        Location location11  = new Location();
-        location11.setxPosition(100);
-        location11.setyPosition(200);
-        trackControllerList.add(track1);
+        Location location = new Location();
+        location.setMemberId(1);
+        List<Track> trackControllerList =trackService.getTrackListByMemberId(location);
         model.addAttribute("trackhistory", trackControllerList);
         return "location_show";
 

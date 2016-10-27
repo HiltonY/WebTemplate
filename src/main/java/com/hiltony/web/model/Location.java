@@ -14,6 +14,24 @@ public class Location {
     private Integer yPosition;
     private Date date;
     private Integer upOrDown; //1 上楼 -1 下楼 0
+    private Date sampleTime;//采样时间
+    private Integer status;//采样状态1:正常，2:预警
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Date getSampleTime() {
+        return sampleTime;
+    }
+
+    public void setSampleTime(Date sampleTime) {
+        this.sampleTime = sampleTime;
+    }
 
     public Integer getUpOrDown() {
         return upOrDown;

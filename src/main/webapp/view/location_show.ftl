@@ -1,17 +1,20 @@
+<#if (trackhistory?size<=4 )>
 
+    <#list trackhistory as track>
+    <div style="width:500px; height:400px;background:url(/img/map.jpg);background-size:100% 100%; ">
 
+        <#list track.locationList as location>
 
+            <div id="point" style="width:99%; height:99%;">
+                <div style="width:10px;height: 10px; background-color:
+                        <#if location.status =2>#c23321
+                        <#else>#00c242
+                        </#if>
+                        ;position: relative;left: ${location.xPosition}px;top: ${location.yPosition}px;border-radius:5px;"></div>
 
-<div id="location_show_map" style="width:800px; height:600px;background:url(/img/map.jpg);background-size:100% 100%; ">
+            </div>
+        </#list>
 
-<#list trackhistory as item>
-
-    <div id="point" style="width:99%; height:99%;">
-        <div style="width:10px;height: 10px; background-color: #c23321;position: relative;left: 100px;top: 100px;border-radius:5px;"></div>
-        <div style="width:10px;height: 10px; background-color: #00c242;position: relative;left: 200px;top: 200px;border-radius:5px;"></div>
-        <div style="width:10px;height: 10px; background-color: #00c242;position: relative;left: 300px;top: 500px;border-radius:5px;"></div>
-        <div style="width:10px;height: 10px; background-color: #00c242;position: relative;left: 400px;top: 400px;border-radius:5px;"></div>
-        <input type="button" value="▲" id="up" style="width:10px;height: 10px;position: relative;left:600px;top:300px; background-color:#c23321"/>
     </div>
-</#list>
-</div>
+    </#list>
+</#if>
