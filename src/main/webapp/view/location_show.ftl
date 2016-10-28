@@ -10,6 +10,20 @@
         <li class="active">Data tables</li>
     </ol>
 </section>
+<section>
+
+    <div class="col-md-2">
+        <label>请选择客户姓名</label>
+        <select class="form-control select2" style="width: 100%;">
+            <option selected="selected">Alabama</option>
+            <option>Alaska</option>
+            <option>Delaware</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Washington</option>
+        </select>
+    </div>
+</section>
 <section class="content">
 
 <#if (trackhistory?size<=4 )>
