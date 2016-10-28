@@ -28,6 +28,7 @@ public class TrackServiceImp implements TrackService {
             if (loca.getFloor()>floor){
                 floor=loca.getFloor();
                 track = new Track();
+                track.setFloor(floor);
                 track.setLocationList(new ArrayList<>());
                 result.add(track);
             }
