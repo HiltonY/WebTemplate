@@ -53,36 +53,36 @@
                         <div class="row">
                             <div class="col-sm-3 col-xs-6">
                                 <div class="description-block border-right">
-                                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                                    <h5 class="description-header">$35,210.43</h5>
-                                    <span class="description-text">TOTAL REVENUE</span>
+                                    <#--<span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>-->
+                                    <h5 class="description-header">1小时35分钟</h5>
+                                    <span class="description-text">楼层总停留时间</span>
                                 </div>
                                 <!-- /.description-block -->
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-3 col-xs-6">
                                 <div class="description-block border-right">
-                                    <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                                    <h5 class="description-header">$10,390.90</h5>
-                                    <span class="description-text">TOTAL COST</span>
+                                    <#--<span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>-->
+                                    <h5 class="description-header">0次</h5>
+                                    <span class="description-text">总预警次数</span>
                                 </div>
                                 <!-- /.description-block -->
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-3 col-xs-6">
                                 <div class="description-block border-right">
-                                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                                    <h5 class="description-header">$24,813.53</h5>
-                                    <span class="description-text">TOTAL PROFIT</span>
+                                    <#--<span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>-->
+                                    <h5 class="description-header">1次</h5>
+                                    <span class="description-text">上楼次数</span>
                                 </div>
                                 <!-- /.description-block -->
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-3 col-xs-6">
                                 <div class="description-block">
-                                    <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                                    <h5 class="description-header">1200</h5>
-                                    <span class="description-text">GOAL COMPLETIONS</span>
+                                    <#--<span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>-->
+                                    <h5 class="description-header">1次</h5>
+                                    <span class="description-text">下楼次数</span>
                                 </div>
                                 <!-- /.description-block -->
                             </div>
