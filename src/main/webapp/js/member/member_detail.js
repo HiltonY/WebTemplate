@@ -1,5 +1,6 @@
 /**
  * Created by YX on 2016/10/23.
+ *
  */
 
 function addMember() {
@@ -21,4 +22,9 @@ function addMember() {
         dataType: "text"
     });
 
+}
+function setMemberDetail(item) {
+
+    $("#member-detail-box").empty();
+    $("#member-detail-box").load("/member/memberDetail?memberId="+item);
 }

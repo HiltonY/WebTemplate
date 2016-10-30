@@ -1,3 +1,8 @@
+<html>
+<head>
+
+</head>
+<body>
 <section class="content-header">
 <#--main标题-->
     <h1>
@@ -10,21 +15,28 @@
         <li class="active">Data tables</li>
     </ol>
 </section>
-<section>
-
-    <div class="col-md-2">
-        <label>请选择客户姓名</label>
-        <select class="form-control select2" style="width: 100%;">
-            <option selected="selected">Alabama</option>
-            <option>Alaska</option>
-            <option>Delaware</option>
-            <option>Tennessee</option>
-            <option>Texas</option>
-            <option>Washington</option>
-        </select>
-    </div>
-</section>
 <section class="content">
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">请选择查询条件</h3>
+        </div>
+        <div class="box-body">
+            <div class="row">
+
+                <div class="col-md-2">
+                    <select class="form-control select2" style="width: 100%;">
+                        <option selected="selected">Alabama</option>
+                        <option>Alaska</option>
+                        <option>Delaware</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Washington</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 <#if (trackhistory?size<=4 )>
 
@@ -45,21 +57,41 @@
 
                                         <#list trackhistory[t*2].locationList as location>
 
-                                            <div  style="width:99%; height:99%;">
+                                            <div style="width:99%; height:99%;">
                                                 <div style="width:10px;height: 10px; background-color:
                                                     <#if location.status =2>#c23321
                                                     <#else>#00c242
                                                     </#if>
                                                         ;position: relative;left: ${location.xPosition}px;top: ${location.yPosition}px;border-radius:5px;"
-                                                     onclick="clickPositionPoint(${location.xPosition},${location.yPosition},'${location.sampleTime?string("yyyy-MM-dd HH:mm:ss")}',${location.status})"></div>
-
+                                                     onclick="clickPositionPoint(${location.floor},${location.xPosition},${location.yPosition},'${location.sampleTime?string("yyyy-MM-dd HH:mm:ss")}',${location.status})"></div>
                                             </div>
                                         </#list>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
+                                <p class="lead">监控数据</p>
 
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tr>
+                                            <th style="width:50%">楼层</th>
+                                            <td id="floor">测试</td>
+                                        </tr>
+                                        <tr>
+                                            <th>时间</th>
+                                            <td id="time">测试</td>
+                                        </tr>
+                                        <tr>
+                                            <th>坐标位置</th>
+                                            <td id="position">测试</td>
+                                        </tr>
+                                        <tr>
+                                            <th>状态</th>
+                                            <td id="status">测试</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
 
@@ -68,7 +100,7 @@
                         <div class="row">
                             <div class="col-sm-3 col-xs-6">
                                 <div class="description-block border-right">
-                                    <#--<span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>-->
+                                <#--<span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>-->
                                     <h5 class="description-header">1小时35分钟</h5>
                                     <span class="description-text">楼层总停留时间</span>
                                 </div>
@@ -77,7 +109,7 @@
                             <!-- /.col -->
                             <div class="col-sm-3 col-xs-6">
                                 <div class="description-block border-right">
-                                    <#--<span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>-->
+                                <#--<span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>-->
                                     <h5 class="description-header">0次</h5>
                                     <span class="description-text">总预警次数</span>
                                 </div>
@@ -86,7 +118,7 @@
                             <!-- /.col -->
                             <div class="col-sm-3 col-xs-6">
                                 <div class="description-block border-right">
-                                    <#--<span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>-->
+                                <#--<span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>-->
                                     <h5 class="description-header">1次</h5>
                                     <span class="description-text">上楼次数</span>
                                 </div>
@@ -95,7 +127,7 @@
                             <!-- /.col -->
                             <div class="col-sm-3 col-xs-6">
                                 <div class="description-block">
-                                    <#--<span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>-->
+                                <#--<span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>-->
                                     <h5 class="description-header">1次</h5>
                                     <span class="description-text">下楼次数</span>
                                 </div>
@@ -151,3 +183,6 @@
 
 </section>
 </#if>
+
+</body>
+</html>

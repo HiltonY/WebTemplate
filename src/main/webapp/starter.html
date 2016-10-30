@@ -23,6 +23,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect.
   -->
   <link rel="stylesheet" href="/css/skins/skin-blue.min.css">
+    <!-- Select2 -->
+   <link rel="stylesheet" href="/js/plugins/select2/select2.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,11 +33,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
   <!-- jQuery 2.2.3 -->
-  <script src="/js/jquery/1.11.1/jquery.min.js"></script>
+  <!--<script src="/js/jquery/1.11.1/jquery.min.js"></script>-->
+    <script src="js/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <!-- Bootstrap 3.3.6 -->
   <script src="/js/bootstrap/bootstrap.min.js"></script>
+
   <!-- AdminLTE App -->
   <script src="/js/app.min.js"></script>
+
+    <!-- Select2选择器js -->
+    <script src="/js/plugins/select2/select2.js"></script>
     <!--客户页面js-->
     <script src="/js/member/member_detail.js"></script>
   <!--轨迹页面js-->
@@ -54,6 +61,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             });
         }
         $(document).ready(function () {
+            $(".select2").select2();
 
             $("#member").click(
                     function () {
@@ -67,7 +75,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   function () {
                         $("#main_context").empty();
                         $("#main_context").load("/track/history");
+                        $(".select2").select2();
+
                   }
+
           )
             $("[href='#user']").click(function () {
                 $("#main_context").empty();

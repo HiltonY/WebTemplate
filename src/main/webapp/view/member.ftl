@@ -112,7 +112,7 @@ desired effect
                             <tbody>
                             <#list memberList as item>
                             <tr>
-                                <td>${item.memberName}</td>
+                                <td><a href="javascript:setMemberDetail(${item.memberId})">${item.memberName}</a></td>
                                 <td>${item.gender}</td>
                                 <td>${item.age}</td>
                                 <td><#if item.status==1>正常<#else>预警</#if></td>

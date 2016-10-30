@@ -3,8 +3,11 @@
  *
  */
 
-function clickPositionPoint(xPosition,yPosition,sampleTime,status) {
-    alert('测试点击'+ '-> x:'+xPosition +';y:'+yPosition+";time:"+sampleTime+';:'+'状态：'+ (status==0?'预警':'正常'));
+function clickPositionPoint(floor,xPosition,yPosition,sampleTime,status) {
+    $("#floor").text(floor.toString());
+    $("#position").text("("+xPosition+","+yPosition+")");
+    $("#time").text(sampleTime);
+    $("#status").text(status==0?'预警':'正常');
 }
 function addMember() {
     var params = {};
