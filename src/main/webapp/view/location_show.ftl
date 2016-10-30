@@ -45,12 +45,13 @@
 
                                         <#list trackhistory[t*2].locationList as location>
 
-                                            <div id="point" style="width:99%; height:99%;">
+                                            <div  style="width:99%; height:99%;">
                                                 <div style="width:10px;height: 10px; background-color:
                                                     <#if location.status =2>#c23321
                                                     <#else>#00c242
                                                     </#if>
-                                                        ;position: relative;left: ${location.xPosition}px;top: ${location.yPosition}px;border-radius:5px;"></div>
+                                                        ;position: relative;left: ${location.xPosition}px;top: ${location.yPosition}px;border-radius:5px;"
+                                                     onclick="clickPositionPoint(${location.xPosition},${location.yPosition},'${location.sampleTime?string("yyyy-MM-dd HH:mm:ss")}',${location.status})"></div>
 
                                             </div>
                                         </#list>
