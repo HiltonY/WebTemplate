@@ -8,14 +8,24 @@ import java.util.Date;
  */
 public class Location {
 
-    private Integer memberId;
+    private Long memberId;
     private Integer floor;
     private Integer xPosition;
     private Integer yPosition;
     private Date date;
     private Integer upOrDown; //1 上楼 -1 下楼 0
     private Date sampleTime;//采样时间
+    private Long stayTime;//停留时间，以分钟计数
     private Integer status;//采样状态1:正常，2:预警
+
+
+    public Long getStayTime() {
+        return stayTime;
+    }
+
+    public void setStayTime(Long stayTime) {
+        this.stayTime = stayTime;
+    }
 
     public Integer getStatus() {
         return status;
@@ -49,11 +59,11 @@ public class Location {
         this.date = date;
     }
 
-    public Integer getMemberId() {
+    public Long getMemberId() {
         return memberId;
     }
 
-    public void setMemberId(Integer memberId) {
+    public void setMemberId(Long memberId) {
         this.memberId = memberId;
     }
 

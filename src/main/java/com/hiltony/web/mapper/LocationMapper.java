@@ -17,4 +17,6 @@ public interface LocationMapper {
     int addLocation(Location location);
 
     int updateLocation(Location location);
+
+    List<Location> getIntimeLocationList(Location location);
 }

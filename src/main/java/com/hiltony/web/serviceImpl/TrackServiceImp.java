@@ -30,7 +30,25 @@ public class TrackServiceImp implements TrackService {
                 floor=loca.getFloor();
                 track = new Track();
                 track.setFloor(floor);
-                track.setLocationList(new ArrayList<>());
+                track.setLocationList(new ArrayList<Location>());
+                result.add(track);
+            }
+            track.getLocationList().add(loca);
+        }
+        return result;
+    }
+
+    public List<Track> getIntimeTrackList(Location location) {
+        List<Location> locationList = locationMapper.getIntimeLocationList(location);
+        List<Track> result = new ArrayList<>();
+        int floor = 0;
+        Track track = new Track();
+        for (Location loca:locationList){
+            if (loca.getFloor()>floor){
+                floor=loca.getFloor();
+                track = new Track();
+                track.setFloor(floor);
+                track.setLocationList(new ArrayList<Location>());
                 result.add(track);
             }
             track.getLocationList().add(loca);

@@ -14,4 +14,6 @@ public interface TrackService {
 
     List<Track> getTrackListByMemberId(Location location);
 
+    List<Track> getIntimeTrackList(Location location);
+
 }
