@@ -13,13 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/statistics")
 public class StatisticsController {
 
-    @RequestMapping("/index")
+    @RequestMapping("/total")
     public String bootstrap(HttpServletRequest request, Model model){
         return "bootstrap";
     }
 
-    @RequestMapping("/temp")
-    public String temp(HttpServletRequest request, Model model){
-        return "temp";
-    }
+
 }

@@ -84,10 +84,8 @@
             <if test="memberId!=null">
                 memberId=#{memberId}
             </if>
-            <if test="date!=null">
-                <![CDATA[
-                and sampletime >= DATE(#{date}) and sampletime <= DATE_ADD(DATE(#{date}),INTERVAL 1 DAY)
-                ]]>
+            <if test="floor!=null">
+                and floor = #{floor}
             </if>
         </where>
         ORDER BY floor
