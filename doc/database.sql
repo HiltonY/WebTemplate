@@ -71,15 +71,15 @@ INSERT INTO `webdemo`.`location_intime`
 (memberId,`xposition`, `yposition`, `floor`, `sampletime`, `staytime`,`status`)
 VALUES
   (2,100,   100,   1,   '2016-10-26 08:00:00', 30,  1);
-INSERT INTO `webdemo`.`location_info`
+INSERT INTO `webdemo`.`location_intime`
 (memberId,`xposition`, `yposition`, `floor`, `sampletime`, `staytime`,`status`)
 VALUES
   (3,200,   200,   1,   '2016-10-26 08:05:00', 20,  1);
-INSERT INTO `webdemo`.`location_info`
+INSERT INTO `webdemo`.`location_intime`
 (memberId,`xposition`, `yposition`, `floor`, `sampletime`, `staytime`,`status`)
 VALUES
   (4,300,   200,   1,   '2016-10-26 08:10:00', 50,  1);
-INSERT INTO `webdemo`.`location_info`
+INSERT INTO `webdemo`.`location_intime`
 (memberId,`xposition`, `yposition`, `floor`, `sampletime`, `staytime`,`status`)
 VALUES
   (5,400,   300,   2,   '2016-10-26 08:15:00', 25,  2);

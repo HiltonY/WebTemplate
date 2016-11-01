@@ -76,4 +76,21 @@
         </set>
         where memberid = #{memberId}
     </update>
+
+
+    <select id="getIntimeLocationList" parameterType="Location" resultType="Location">
+        SELECT * from location_intime
+        <where>
+            <if test="memberId!=null">
+                memberId=#{memberId}
+            </if>
+            <if test="date!=null">
+                <![CDATA[
+                and sampletime >= DATE(#{date}) and sampletime <= DATE_ADD(DATE(#{date}),INTERVAL 1 DAY)
+                ]]>
+            </if>
+        </where>
+        ORDER BY floor
+
+    </select>
 </mapper>
