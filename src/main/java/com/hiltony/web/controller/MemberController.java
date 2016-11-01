@@ -65,6 +65,12 @@ public class MemberController {
         return userInfo;
     }
 
+    @RequestMapping("/getMemberList")
+    @ResponseBody
+    public List<Member> getMemberList(Member member,HttpServletRequest request){
+        return memberService.getMemberList(member);
+    }
+
     @RequestMapping(value = "/addMember",method = RequestMethod.POST)
     @ResponseBody
     public String addMember(Member member ,HttpServletRequest request,Model model){
