@@ -83,3 +83,31 @@ INSERT INTO `webdemo`.`location_intime`
 (memberId,`xposition`, `yposition`, `floor`, `sampletime`, `staytime`,`status`)
 VALUES
   (5,400,   300,   2,   '2016-10-26 08:15:00', 25,  2);
+
+
+
+DROP TABLE IF EXISTS `member_event_history`;
+CREATE TABLE member_event_history (
+  id int(11) NOT NULL AUTO_INCREMENT comment '自增ID',
+  memberId int (11) NOT NULL comment '客户ID',
+  title varchar(255) NOT NULL comment '事件标题',
+  eventdesc varchar(255) NOT NULL comment '事件描述',
+  eventtime date comment '发生时间',
+  type int (4) NOT NULL comment '事件类型,1:通知，2:警告',
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `webdemo`.`location_intime`
+(memberId,`title`, `eventdesc`, `eventtime`, `type`)
+VALUES
+  (2,'欢迎新客户加入', '欢迎客户测试加入', '2016-10-26 08:00:00', 1);
+INSERT INTO `webdemo`.`location_intime`
+(memberId,`title`, `eventdesc`, `eventtime`, `type`)
+VALUES
+  (2,'日常体检结果', '体检正常', '2016-10-27 08:00:00', 1);
+
+INSERT INTO `webdemo`.`location_intime`
+(memberId,`title`, `eventdesc`, `eventtime`, `type`)
+VALUES
+  (2,'警告', '客户跌倒，地点二楼厕所', '2016-10-28 08:00:00', 1);
+

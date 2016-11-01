@@ -6,6 +6,7 @@
 function clickPositionPoint(_this,floor,xPosition,yPosition,sampleTime,status) {
     $(_this).css({width:'20px',height:'20px',radius:'10'});
 
+    $("#dwtedx").parent().parent()
     $("#floor").text(floor.toString());
     $("#position").text("("+xPosition+","+yPosition+")");
     $("#time").text(sampleTime);
