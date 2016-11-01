@@ -4,9 +4,15 @@
  */
 
 function clickPositionPoint(_this,floor,xPosition,yPosition,sampleTime,status) {
-    $(_this).css({width:'20px',height:'20px',radius:'10'});
+    $(_this).parent().children(".point").each(
+        function () {
+            $(this).css({width:'10px',height:'10px'});
+        }
+    );
+    // $(_this).parent().child(".point").css({width:'10px',height:'10px'});
+    // $(".point").css({width:'10px',height:'10px'});
+    $(_this).css({width:'20px',height:'20px'});
 
-    $("#dwtedx").parent().parent()
     $("#floor").text(floor.toString());
     $("#position").text("("+xPosition+","+yPosition+")");
     $("#time").text(sampleTime);

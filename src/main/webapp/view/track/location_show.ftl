@@ -25,6 +25,7 @@
 
                 <div class="col-md-2">
                     <select class="form-control select2" style="width: 100%;">
+
                         <option selected="selected">Alabama</option>
                         <option>Alaska</option>
                         <option>Delaware</option>
@@ -41,7 +42,8 @@
 <#--<#if (trackhistory?size<=4 )>-->
 
     <#--<#list 0..(trackhistory?size-1)/2 as t>-->
-<#list trackhistory as item>
+    <div id="track_history_detail">
+    <#list trackhistory as item>
         <div class="row">
             <div class="col-md-12">
             <#--<div class="box box-primary">-->
@@ -58,12 +60,41 @@
                                         <#list item.locationList as location>
 
                                             <div style="width:99%; height:99%;">
-                                                <div style="width:10px;height: 10px; border-radius:5px;background-color:
-                                                    <#if location.status =2>#c23321
-                                                    <#else>#00c242
+                                                <#--<div style="width:10px;height: 10px; border-radius:5px;background-color:-->
+                                                    <#--<#if location.status =2>#c23321-->
+                                                    <#--<#else>#00c242-->
+                                                    <#--</#if>-->
+                                                        <#--;position: absolute;left: ${location.xPosition}px;bottom: ${location.yPosition}px;"-->
+                                                     <#--onclick="clickPositionPoint(this,${location.floor},${location.xPosition},${location.yPosition},'${location.sampleTime?string("yyyy-MM-dd HH:mm:ss")}',${location.status})">-->
+                                                    <#---->
+                                                <#--</div>-->
+                                                    <img class="point"
+                                                    <#if location.status =1>
+                                                    <#--正常-->
+                                                        <#if location.upOrDown=1>
+                                                        <#--上楼-->
+                                                         src="/images/up_green.png"
+                                                        <#elseif location.upOrDown=-1>
+                                                         <#--下楼-->
+                                                         src="/images/down_green.png"
+                                                         <#else>
+                                                         src="/images/green.png"
+                                                        </#if>
+                                                    <#else>
+                                                    <#--预警-->
+                                                        <#if location.upOrDown=1>
+                                                        <#--上楼-->
+                                                         src="/images/up_red.png"
+                                                        <#elseif location.upOrDown=-1>
+                                                        <#--下楼-->
+                                                         src="/images/down_red.png"
+                                                        <#else>
+                                                         src="/images/red.png"
+                                                        </#if>
                                                     </#if>
-                                                        ;position: absolute;left: ${location.xPosition}px;bottom: ${location.yPosition}px;"
-                                                     onclick="clickPositionPoint(this,${location.floor},${location.xPosition},${location.yPosition},'${location.sampleTime?string("yyyy-MM-dd HH:mm:ss")}',${location.status})"></div>
+                                                      width="10px"; height="10px"; style="position:absolute; left: ${location.xPosition}px;bottom: ${location.yPosition}px;"
+                                                         onclick="clickPositionPoint(this,${location.floor},${location.xPosition},${location.yPosition},'${location.sampleTime?string("yyyy-MM-dd HH:mm:ss")}',${location.status}) ">
+
                                             </div>
                                         </#list>
                                     </div>
@@ -141,6 +172,7 @@
             </div>
         </div>
     </#list>
+    </div>
 <#--<#list trackhistory as track>-->
 <#--<div style="width:50%; height:400px;">-->
 <#--<div style="padding: 10px;position: relative;">-->
