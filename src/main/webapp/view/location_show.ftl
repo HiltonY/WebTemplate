@@ -38,16 +38,16 @@
 
     </div>
 
-<#if (trackhistory?size<=4 )>
+<#--<#if (trackhistory?size<=4 )>-->
 
-    <#list 0..(trackhistory?size-1)/2 as t>
-
+    <#--<#list 0..(trackhistory?size-1)/2 as t>-->
+<#list trackhistory as item>
         <div class="row">
             <div class="col-md-12">
             <#--<div class="box box-primary">-->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">第${trackhistory[t*2].floor}层</h3>
+                        <h3 class="box-title">第${item.floor}层</h3>
                     </div>
                     <div class="box-body">
                         <div class="row">
@@ -55,15 +55,15 @@
                                 <div class="box-body no-padding">
                                     <div style="width:100%; height:400px;background:url(/img/map.jpg);background-size:100% 100%; ">
 
-                                        <#list trackhistory[t*2].locationList as location>
+                                        <#list item.locationList as location>
 
                                             <div style="width:99%; height:99%;">
-                                                <div style="width:10px;height: 10px; background-color:
+                                                <div style="width:10px;height: 10px; border-radius:5px;background-color:
                                                     <#if location.status =2>#c23321
                                                     <#else>#00c242
                                                     </#if>
-                                                        ;position: relative;left: ${location.xPosition}px;top: ${location.yPosition}px;border-radius:5px;"
-                                                     onclick="clickPositionPoint(${location.floor},${location.xPosition},${location.yPosition},'${location.sampleTime?string("yyyy-MM-dd HH:mm:ss")}',${location.status})"></div>
+                                                        ;position: absolute;left: ${location.xPosition}px;bottom: ${location.yPosition}px;"
+                                                     onclick="clickPositionPoint(this,${location.floor},${location.xPosition},${location.yPosition},'${location.sampleTime?string("yyyy-MM-dd HH:mm:ss")}',${location.status})"></div>
                                             </div>
                                         </#list>
                                     </div>
@@ -139,31 +139,6 @@
                 </div>
 
             </div>
-            <div class="col-md-12">
-                <div class="box">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">第${trackhistory[t*2+1].floor}层</h3>
-                    </div>
-                    <div class="box-body no-padding">
-                        <div style="width:500px; height:400px;background:url(/img/map.jpg);background-size:100% 100%; ">
-
-                            <#list trackhistory[t*2+1].locationList as location>
-
-                                <div id="point" style="width:99%; height:99%;">
-                                    <div style="width:10px;height: 10px; background-color:
-                                        <#if location.status =2>#c23321
-                                        <#else>#00c242
-                                        </#if>
-                                            ;position: relative;left: ${location.xPosition}px;top: ${location.yPosition}px;border-radius:5px;"></div>
-
-                                </div>
-                            </#list>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
         </div>
     </#list>
 <#--<#list trackhistory as track>-->
@@ -179,10 +154,10 @@
 <#--</div>-->
 
 <#--</#list>-->
-
+<#--</#if>-->
 
 </section>
-</#if>
+
 
 </body>
 </html>
