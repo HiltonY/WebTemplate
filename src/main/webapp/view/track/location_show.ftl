@@ -107,19 +107,19 @@
                                     <table class="table">
                                         <tr>
                                             <th style="width:50%">楼层</th>
-                                            <td id="floor">测试</td>
+                                            <td id="floor${item.floor}">测试</td>
                                         </tr>
                                         <tr>
                                             <th>时间</th>
-                                            <td id="time">测试</td>
+                                            <td id="time${item.floor}">测试</td>
                                         </tr>
                                         <tr>
                                             <th>坐标位置</th>
-                                            <td id="position">测试</td>
+                                            <td id="position${item.floor}">测试</td>
                                         </tr>
                                         <tr>
                                             <th>状态</th>
-                                            <td id="status">测试</td>
+                                            <td id="status${item.floor}">测试</td>
                                         </tr>
                                     </table>
                                 </div>

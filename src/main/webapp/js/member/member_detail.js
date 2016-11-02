@@ -3,6 +3,14 @@
  *
  */
 
+function submitMember() {
+    if($("#memberId").val()==''){
+        addMember();
+    }
+    else {
+        updateMember();
+    }
+}
 function addMember() {
     var params = {};
     params.memberName = $("#memberName").val();
@@ -22,6 +30,21 @@ function addMember() {
         dataType: "text"
     });
 
+}
+
+function  editMember(_this) {
+
+    $("#submit").removeAttr("disabled");
+    $("#memberName").removeAttr("disabled");
+    $("#gender").removeAttr("disabled");
+    $("#datepicker").removeAttr("disabled");
+    $("#address").removeAttr("disabled");
+    $("#phoneNumber").removeAttr("disabled");
+
+}
+
+function updateMember() {
+    alert("更新客户信息");
 }
 function setMemberDetail(item) {
 
