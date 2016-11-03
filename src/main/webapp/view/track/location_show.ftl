@@ -61,7 +61,9 @@
                                 <div class="box-body no-padding">
                                     <div style="width:100%; height:400px;background:url(/img/map.jpg);background-size:100% 100%; ">
 
-                                        <#list trackHistory[key] as location>
+                                        <#assign item = trackHistory[key]>
+                                        <#--<#list trackHistory?api.get(key) as location>-->
+                                        <#list item as location>
 
                                             <div style="width:99%; height:99%;">
                                                 <#--<div style="width:10px;height: 10px; border-radius:5px;background-color:-->
@@ -97,7 +99,7 @@
                                                         </#if>
                                                     </#if>
                                                       width="10px"; height="10px"; style="position:absolute; left: ${location.xPosition}px;bottom: ${location.yPosition}px;"
-                                                         onclick="clickPositionPoint(this,${location.floor},${location.xPosition},${location.yPosition},'${location.sampleTime?string("yyyy-MM-dd HH:mm:ss")}',${location.status}) ">
+                                                         onclick="clickPositionPoint(this,${key},${location.xPosition},${location.yPosition},'${location.sampleTime?string("yyyy-MM-dd HH:mm:ss")}',${location.status}) ">
 
                                             </div>
                                         </#list>
@@ -111,19 +113,19 @@
                                     <table class="table">
                                         <tr>
                                             <th style="width:50%">楼层</th>
-                                            <td id="floor${item.floor}"></td>
+                                            <td id="floor${key}"></td>
                                         </tr>
                                         <tr>
                                             <th>时间</th>
-                                            <td id="time${item.floor}"></td>
+                                            <td id="time${key}"></td>
                                         </tr>
                                         <tr>
                                             <th>坐标位置</th>
-                                            <td id="position${item.floor}"></td>
+                                            <td id="position${key}"></td>
                                         </tr>
                                         <tr>
                                             <th>状态</th>
-                                            <td id="status${item.floor}"></td>
+                                            <td id="status${key}"></td>
                                         </tr>
                                     </table>
                                 </div>

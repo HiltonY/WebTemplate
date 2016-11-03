@@ -34,7 +34,7 @@ public class TrackController {
     public String getTrack(Member member,HttpServletRequest request, Model model){
 
         List<Member> memberList = memberService.getMemberList(new Member());
-        Map<Integer,List<Location>> trackControllerList;
+        Map<String,List<Location>> trackControllerList;
         Location location = new Location();
         if (memberList.size()!=0){
             if (member!=null && member.getMemberId()!=null){
@@ -69,7 +69,7 @@ public class TrackController {
     public String getIntimeTrack(Member member,HttpServletRequest request, Model model){
 
         List<Member> memberList = memberService.getMemberList(new Member());
-        Map<Integer,List<Location>> trackControllerList;
+        Map<String,List<Location>> trackControllerList;
         Location location = new Location();
         if (memberList.size()!=0){
             trackControllerList =trackService.getIntimeTrackList(location);

@@ -7,83 +7,63 @@ import com.hiltony.web.service.TrackService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by YX on 2016/10/26.
- *
  */
 @Service("trackService")
 public class TrackServiceImp implements TrackService {
 
     @Resource
-    private LocationMapper locationMapper ;
+    private LocationMapper locationMapper;
+
     @Override
-    public Map<Integer,List<Location>> getTrackListByMemberId(Location location) {
+    public Map<String, List<Location>> getTrackListByMemberId(Location location) {
         List<Location> locationList = locationMapper.getLocationList(location);
-        if (locationList.size()==0){
+        if (locationList.size() == 0) {
             return null;
         }
         List<List<Location>> resultList = new ArrayList<>();
-        Map<Integer,List<Location>> resultMap = new HashMap<>();
+        Map<String, List<Location>> resultMap = new TreeMap<>();
 
         Location pre = locationList.get(0);
-        for (Location loca:locationList){
-            if (loca==pre){
-                //初始楼层
-                loca.setUpOrDown(0);
-            }
-            else {
-                //判断当前楼层和之前楼层的关系
-                if(loca.getFloor()>pre.getFloor()){
-                    pre.setUpOrDown(1);
-                }
-                else if (loca.getFloor()<pre.getFloor()){
-                    pre.setUpOrDown(-1);
-                }
-                else {
-                    pre.setUpOrDown(0);
-                }
-                pre=loca;
-            }
-            if (resultList.get(loca.getFloor())==null){
-                resultList.set(loca.getFloor(),new ArrayList<Location>());
-            }
-            resultList.get(loca.getFloor()).add(loca);
-        }
+        locationList.get(0).setUpOrDown(0);
+        resultMap.put(pre.getFloor().toString(),new ArrayList<>());
+        resultMap.get(pre.getFloor().toString()).add(pre);
+        for (int i = 1; i < locationList.size(); i++) {
+            Location loca = locationList.get(i);
 
-        for (Integer i =0;i<resultList.size();i++){
-            if (resultList.get(i)!=null) {
-                resultMap.put(i, resultList.get(i));
+            //判断当前楼层和之前楼层的关系
+            if (loca.getFloor() > pre.getFloor()) {
+                pre.setUpOrDown(1);
+            } else if (loca.getFloor() < pre.getFloor()) {
+                pre.setUpOrDown(-1);
+            } else {
+                pre.setUpOrDown(0);
             }
+            resultMap.putIfAbsent(loca.getFloor().toString(), new ArrayList<>());
+            resultMap.get(loca.getFloor().toString()).add(loca);
+            pre = loca;
+
+
         }
         return resultMap;
     }
 
-    public Map<Integer,List<Location>> getIntimeTrackList(Location location) {
+    public Map<String, List<Location>> getIntimeTrackList(Location location) {
         List<Location> locationList = locationMapper.getIntimeLocationList(location);
 
-        if (locationList.size()==0){
+        if (locationList.size() == 0) {
             return null;
         }
-        List<List<Location>> resultList = new ArrayList<>();
-        Map<Integer,List<Location>> resultMap = new HashMap<>();
+        Map<String, List<Location>> resultMap = new TreeMap<>();
 
-        for (Location loca:locationList){
-            if (resultList.get(loca.getFloor())==null){
-                resultList.set(loca.getFloor(),new ArrayList<Location>());
-            }
-            resultList.get(loca.getFloor()).add(loca);
+        for (Location loca : locationList) {
+            resultMap.putIfAbsent(loca.getFloor().toString(), new ArrayList<>());
+            resultMap.get(loca.getFloor().toString()).add(loca);
         }
 
-        for (Integer i =0;i<resultList.size();i++){
-            if (resultList.get(i)!=null) {
-                resultMap.put(i, resultList.get(i));
-            }
-        }
         return resultMap;
 
     }

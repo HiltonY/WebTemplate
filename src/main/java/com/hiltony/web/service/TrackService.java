@@ -13,8 +13,8 @@ import java.util.Map;
  */
 public interface TrackService {
 
-    Map<Integer,List<Location>> getTrackListByMemberId(Location location);
+    Map<String,List<Location>> getTrackListByMemberId(Location location);
 
-    Map<Integer,List<Location>> getIntimeTrackList(Location location);
+    Map<String,List<Location>> getIntimeTrackList(Location location);
 
 }
