@@ -5,6 +5,7 @@ import com.hiltony.web.model.Member;
 import com.hiltony.web.model.Track;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by YX on 2016/10/23.
@@ -12,8 +13,8 @@ import java.util.List;
  */
 public interface TrackService {
 
-    List<Track> getTrackListByMemberId(Location location);
+    Map<Integer,List<Location>> getTrackListByMemberId(Location location);
 
-    List<Track> getIntimeTrackList(Location location);
+    Map<Integer,List<Location>> getIntimeTrackList(Location location);
 
 }

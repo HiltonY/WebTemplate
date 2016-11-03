@@ -15,7 +15,7 @@
                 ]]>
             </if>
         </where>
-        ORDER BY floor
+        ORDER BY sampletime
 
     </select>
 

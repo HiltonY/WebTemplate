@@ -43,7 +43,7 @@
 
     <#--<#list 0..(trackhistory?size-1)/2 as t>-->
     <div id="track_history_detail">
-    <#list trackhistory as item>
+    <#list trackHistory as item>
         <div class="row">
             <div class="col-md-12">
             <#--<div class="box box-primary">-->
