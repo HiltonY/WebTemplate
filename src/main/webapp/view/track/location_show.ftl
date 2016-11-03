@@ -25,13 +25,15 @@
 
                 <div class="col-md-2">
                     <select class="form-control select2" style="width: 100%;">
+                        <#list memberList as member>
+                            <#if member_index==0>
+                                <option selected="selected">${member.memberName}</option>
+                            <#else>
+                                <option>${member.memberName}</option>
+                            </#if>
 
-                        <option selected="selected">Alabama</option>
-                        <option>Alaska</option>
-                        <option>Delaware</option>
-                        <option>Tennessee</option>
-                        <option>Texas</option>
-                        <option>Washington</option>
+
+                        </#list>
                     </select>
                 </div>
             </div>
@@ -43,13 +45,15 @@
 
     <#--<#list 0..(trackhistory?size-1)/2 as t>-->
     <div id="track_history_detail">
-    <#list trackHistory as item>
+<#list trackHistory?keys as key>
+    <#--<#list trackHistory as item>-->
+
         <div class="row">
             <div class="col-md-12">
             <#--<div class="box box-primary">-->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">第${item.floor}层</h3>
+                        <h3 class="box-title">第${key}层</h3>
                     </div>
                     <div class="box-body">
                         <div class="row">
@@ -57,7 +61,7 @@
                                 <div class="box-body no-padding">
                                     <div style="width:100%; height:400px;background:url(/img/map.jpg);background-size:100% 100%; ">
 
-                                        <#list item.locationList as location>
+                                        <#list trackHistory[key] as location>
 
                                             <div style="width:99%; height:99%;">
                                                 <#--<div style="width:10px;height: 10px; border-radius:5px;background-color:-->
