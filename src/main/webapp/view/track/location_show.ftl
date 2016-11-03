@@ -45,7 +45,7 @@
 
     <#--<#list 0..(trackhistory?size-1)/2 as t>-->
     <div id="track_history_detail">
-<#list trackHistory?keys as key>
+    <#list trackHistory?keys as key>
     <#--<#list trackHistory as item>-->
 
         <div class="row">
@@ -111,19 +111,19 @@
                                     <table class="table">
                                         <tr>
                                             <th style="width:50%">楼层</th>
-                                            <td id="floor${item.floor}">测试</td>
+                                            <td id="floor${item.floor}"></td>
                                         </tr>
                                         <tr>
                                             <th>时间</th>
-                                            <td id="time${item.floor}">测试</td>
+                                            <td id="time${item.floor}"></td>
                                         </tr>
                                         <tr>
                                             <th>坐标位置</th>
-                                            <td id="position${item.floor}">测试</td>
+                                            <td id="position${item.floor}"></td>
                                         </tr>
                                         <tr>
                                             <th>状态</th>
-                                            <td id="status${item.floor}">测试</td>
+                                            <td id="status${item.floor}"></td>
                                         </tr>
                                     </table>
                                 </div>
