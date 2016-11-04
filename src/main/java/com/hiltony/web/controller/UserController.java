@@ -28,7 +28,7 @@ public class UserController {
 
         try {
             UserInfo userInfo = userService.getUser(user);
-            if (user!=null)
+            if (user!=null && user.getId()!=null)
                 return "success";
             else
                 return "用户名/密码错误";
