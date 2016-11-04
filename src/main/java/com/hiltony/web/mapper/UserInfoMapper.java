@@ -12,6 +12,8 @@ import java.util.List;
 
 public interface UserInfoMapper {
 
+    UserInfo getUserInfo(UserInfo userInfo);
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(UserInfo record);

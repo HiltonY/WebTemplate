@@ -22,6 +22,24 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    @RequestMapping("/login")
+    @ResponseBody
+    public String login(HttpServletRequest request, UserInfo user){
+
+        try {
+            UserInfo userInfo = userService.getUser(user);
+            if (user!=null)
+                return "success";
+            else
+                return "用户名/密码错误";
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return "登录异常，请联系系统管理员";
+        }
+
+
+    }
     @RequestMapping("/showUser")
     public String toIndex(HttpServletRequest request, Model model){
         int userId = Integer.parseInt(request.getParameter("id"));

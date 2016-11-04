@@ -6,6 +6,7 @@ import com.hiltony.web.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.xml.registry.infomodel.User;
 import java.util.List;
 
 /**
@@ -18,6 +19,9 @@ public class UserServiceImpl implements UserService {
     @Resource
     private UserInfoMapper userInfoMapper;
 
+    public UserInfo getUser(UserInfo userInfo){
+        return userInfoMapper.getUserInfo(userInfo);
+    }
     public UserInfo getUserById(int id) {
         return userInfoMapper.selectByPrimaryKey(id);
     }

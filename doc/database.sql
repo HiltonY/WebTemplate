@@ -5,16 +5,17 @@ CREATE TABLE `user_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(40) NOT NULL,
   `password` varchar(255) NOT NULL,
-    `age` int(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+Alter table user_info add unique(username);
 
-insert  into `user_info`(`id`,`username`,`password`,`age`) values (1,'测试','sfasgfaf',24);
+insert  into `user_info`(`username`,`password`) values ('admin','admin');
 
 
 CREATE TABLE member_info (
   memberId int(11) NOT NULL AUTO_INCREMENT comment '客户自增ID',
   memberName varchar(40) NOT NULL comment '客户名称',
+  certifacate varchar(255) NOT NULL comment '身份证号码',
   address varchar(255) NOT NULL comment '联系地址',
   phoneNumber varchar(40) NOT NULL comment '联系电话',
   gender varchar(2) not null comment '性别',
@@ -23,6 +24,8 @@ CREATE TABLE member_info (
   status int (4) NOT NULL comment '当前状态,1:正常，2:预警',
   PRIMARY KEY (memberId)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+Alter table member_info add unique(certifacate);
 
 DROP TABLE IF EXISTS `location_info`;
 CREATE TABLE location_info (
@@ -66,6 +69,7 @@ CREATE TABLE location_intime (
   status int (4) NOT NULL comment '当前状态,1:正常，2:预警',
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+Alter table location_intime add unique(memberId);
 
 INSERT INTO `webdemo`.`location_intime`
 (memberId,`xposition`, `yposition`, `floor`, `sampletime`, `staytime`,`status`)
