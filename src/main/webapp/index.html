@@ -103,7 +103,11 @@
                       window.location.href = "/starter.html";
                     }
                     else {
-                      alert(result);
+                        if(result=='fail')
+                            alert("用户名/密码错误");
+                        else {
+                            alert("登录异常，请稍后重试。");
+                        }
                     }
                 },
                 dataType: "text"

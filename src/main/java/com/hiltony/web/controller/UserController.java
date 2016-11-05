@@ -28,14 +28,14 @@ public class UserController {
 
         try {
             UserInfo userInfo = userService.getUser(user);
-            if (user!=null && user.getId()!=null)
+            if (userInfo!=null && userInfo.getId()!=null)
                 return "success";
             else
-                return "用户名/密码错误";
+                return "fail";
         }
         catch (Exception e){
             e.printStackTrace();
-            return "登录异常，请联系系统管理员";
+            return "error";
         }
 
 

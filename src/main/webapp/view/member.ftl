@@ -171,8 +171,22 @@ desired effect
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <label>联系地址</label>
+                                            <label class="col-lg-12">身份证号</label>
+                                            <input id="certificate" type="text" class="form-control" placeholder="点击输入 ..." >
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <label class="col-lg-12">联系地址</label>
                                             <input id="address" type="text" class="form-control" placeholder="点击输入 ..." >
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <label class="col-lg-12"></label>
+                                            <button id="addMember" type="submit" class="btn btn-info pull-right"
+                                                    onclick="addMember()">新增
+                                            </button>
                                         </div>
                                     </div>
 
@@ -187,10 +201,9 @@ desired effect
                                 <!-- /.tab-pane -->
 
                             </div>
-                            <div class="tab-content">
-                                <button id="addMember" type="submit" class="btn btn-default" onclick="addMember()">新增</button>
-                                <button id="submit" type="submit" class="btn btn-info pull-right" onclick="addMember()">提交</button>
-                            </div>
+                            <#--<div class="tab-content">-->
+
+                            <#--</div>-->
                             <!-- /.tab-content -->
                         </div>
                         <!-- /.nav-tabs-custom -->

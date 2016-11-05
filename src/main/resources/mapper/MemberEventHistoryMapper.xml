@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hiltony.web.mapper.MemberEventHistoryMapper">
+
+    <insert id="addMemberEventHistory" parameterType=""
+    INSERT INTO `webdemo`.`member_event_history`
+    (memberId,`title`, `eventdesc`, `eventtime`, `type`)
+    VALUES
+    (2,'日常体检结果', '体检正常', '2016-10-27 08:00:00', 1);
+</mapper>

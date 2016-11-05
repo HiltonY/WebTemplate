@@ -24,14 +24,15 @@
     </select>
 
     <insert id="addMember" useGeneratedKeys="true" keyProperty="memberId" parameterType="Member">
-        insert into member_info (memberName,address,phoneNumber,gender,birthday,age,status)
+        insert into member_info (memberName,address,phoneNumber,gender,birthday,age,status,certificate)
         values (#{memberName},
         #{address},
         #{phoneNumber},
         #{gender},
         #{birthday},
         #{age},
-        #{status}
+        #{status},
+        #{certificate}
         )
     </insert>
 

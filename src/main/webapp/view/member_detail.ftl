@@ -45,7 +45,13 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <label>联系地址</label>
+                    <label class="col-lg-12">身份证号</label>
+                    <input id="certificate" type="text" class="form-control" value="${member.certificate}" placeholder="点击输入 ..."  disabled>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label class="col-lg-12">联系地址</label>
                     <input id="address" type="text" class="form-control" value="${member.address}" placeholder="点击输入 ..."  disabled>
                 </div>
             </div>

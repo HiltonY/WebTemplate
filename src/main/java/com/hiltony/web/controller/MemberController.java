@@ -38,13 +38,12 @@ public class MemberController {
     public String toIndex(Member member,HttpServletRequest request, Model model){
         List<Member> members = new ArrayList<Member>();
 
-        members.addAll(memberService.getMemberList(member));
+         members.addAll(memberService.getMemberList(member));
 //        Member member = new Member();
 //        member.setName("测试名称");
 //        member.setGender(Gender.MAN.getDesc());
 //        member.setAge(60);
 //        member.setStatus(1);
-//
 //        members.add(member);
 //        member = new Member();
 //        member.setName("测试名称2");
@@ -79,7 +78,7 @@ public class MemberController {
         calendar.setTime(member.getBirthday());
         Calendar current = Calendar.getInstance();
 
-        int age = calendar.get(Calendar.YEAR) - current.get(Calendar.YEAR);
+        int age = current.get(Calendar.YEAR)-calendar.get(Calendar.YEAR);
         calendar.add(Calendar.YEAR,age);
         if (calendar.after(current)){
             age+=1;

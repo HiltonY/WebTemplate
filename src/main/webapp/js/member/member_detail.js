@@ -18,14 +18,14 @@ function addMember() {
     params.birthday = $("#datepicker").val();
     params.address = $("#address").val();
     params.phoneNumber = $("#phoneNumber").val();
-    alert("member_detail.ftl内部");
-    alert(params);
+    params.certificate = $("#certificate").val();
     $.ajax({
         type: 'POST',
         url: "/member/addMember",
         data: params,
         success: function (result) {
-            alert("result");
+            alert("新增客户成功");
+            $("#member").click();
         },
         dataType: "text"
     });
@@ -38,6 +38,7 @@ function  editMember(_this) {
     $("#memberName").removeAttr("disabled");
     $("#gender").removeAttr("disabled");
     $("#datepicker").removeAttr("disabled");
+    $("#certificate").removeAttr("disabled");
     $("#address").removeAttr("disabled");
     $("#phoneNumber").removeAttr("disabled");
 

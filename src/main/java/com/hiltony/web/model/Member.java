@@ -96,6 +96,15 @@ public class Member {
     private Date birthday;
     private Integer age;
     private Integer status;
+    private String certificate;//身份证号
+
+    public String getCertificate() {
+        return certificate;
+    }
+
+    public void setCertificate(String certificate) {
+        this.certificate = certificate;
+    }
 
     public Long getMemberId() {
         return memberId;

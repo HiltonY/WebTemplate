@@ -6,16 +6,16 @@ CREATE TABLE `user_info` (
   `username` varchar(40) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 Alter table user_info add unique(username);
 
 insert  into `user_info`(`username`,`password`) values ('admin','admin');
 
-
+DROP TABLE IF EXISTS `member_info`;
 CREATE TABLE member_info (
   memberId int(11) NOT NULL AUTO_INCREMENT comment '客户自增ID',
   memberName varchar(40) NOT NULL comment '客户名称',
-  certifacate varchar(255) NOT NULL comment '身份证号码',
+  certificate varchar(255) NOT NULL comment '身份证号码',
   address varchar(255) NOT NULL comment '联系地址',
   phoneNumber varchar(40) NOT NULL comment '联系电话',
   gender varchar(2) not null comment '性别',
@@ -23,9 +23,9 @@ CREATE TABLE member_info (
   age int(4) NOT NULL comment '年龄',
   status int (4) NOT NULL comment '当前状态,1:正常，2:预警',
   PRIMARY KEY (memberId)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-Alter table member_info add unique(certifacate);
+Alter table member_info add unique(certificate);
 
 DROP TABLE IF EXISTS `location_info`;
 CREATE TABLE location_info (
@@ -101,16 +101,16 @@ CREATE TABLE member_event_history (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `webdemo`.`location_intime`
+INSERT INTO `webdemo`.`member_event_history`
 (memberId,`title`, `eventdesc`, `eventtime`, `type`)
 VALUES
   (2,'欢迎新客户加入', '欢迎客户测试加入', '2016-10-26 08:00:00', 1);
-INSERT INTO `webdemo`.`location_intime`
+INSERT INTO `webdemo`.`member_event_history`
 (memberId,`title`, `eventdesc`, `eventtime`, `type`)
 VALUES
   (2,'日常体检结果', '体检正常', '2016-10-27 08:00:00', 1);
 
-INSERT INTO `webdemo`.`location_intime`
+INSERT INTO `webdemo`.`member_event_history`
 (memberId,`title`, `eventdesc`, `eventtime`, `type`)
 VALUES
   (2,'警告', '客户跌倒，地点二楼厕所', '2016-10-28 08:00:00', 1);
