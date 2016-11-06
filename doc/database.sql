@@ -96,7 +96,7 @@ CREATE TABLE member_event_history (
   memberId int (11) NOT NULL comment '客户ID',
   title varchar(255) NOT NULL comment '事件标题',
   eventdesc varchar(255) NOT NULL comment '事件描述',
-  eventtime date comment '发生时间',
+  eventtime datetime comment '事件发生时间',
   eventtype int (4) NOT NULL comment '事件类型,1:通知，2:警告',
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -104,14 +104,14 @@ CREATE TABLE member_event_history (
 INSERT INTO `webdemo`.`member_event_history`
 (memberId,`title`, `eventdesc`, `eventtime`, `eventtype`)
 VALUES
-  (2,'欢迎新客户加入', '欢迎客户测试加入', '2016-10-26 08:00:00', 1);
+  (1,'欢迎新客户加入', '欢迎客户测试加入', '2016-10-26 08:01:05', 1);
 INSERT INTO `webdemo`.`member_event_history`
 (memberId,`title`, `eventdesc`, `eventtime`, `eventtype`)
 VALUES
-  (2,'日常体检结果', '体检正常', '2016-10-27 08:00:00', 1);
+  (1,'日常体检结果', '体检正常', '2016-10-27 08:30:00', 1);
 
 INSERT INTO `webdemo`.`member_event_history`
 (memberId,`title`, `eventdesc`, `eventtime`, `eventtype`)
 VALUES
-  (2,'警告', '客户跌倒，地点二楼厕所', '2016-10-28 08:00:00', 1);
+  (1,'警告', '客户跌倒，地点二楼厕所', '2016-10-28 10:05:01', 2);
 
