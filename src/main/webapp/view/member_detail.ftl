@@ -14,7 +14,7 @@
                     <input id="memberId" value="${member.memberId}">
                 </div>
                 <div class="col-lg-6">
-                    <label class="col-lg-12">姓名a </label>
+                    <label class="col-lg-12">姓名 </label>
                     <input id="memberName" type="text" class="form-control" value="${member.memberName}"
                            placeholder="点击输入 ..." disabled>
                 </div>
