@@ -1,8 +1,10 @@
 package com.hiltony.web.controller;
 
 import com.hiltony.web.model.Member;
+import com.hiltony.web.model.MemberEventHistory;
 import com.hiltony.web.model.UserInfo;
 import com.hiltony.web.model.enmu.Gender;
+import com.hiltony.web.service.MemberEventHistoryService;
 import com.hiltony.web.service.MemberService;
 import com.hiltony.web.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -33,6 +35,9 @@ public class MemberController {
 
     @Resource
     private MemberService memberService;
+
+    @Resource
+    private MemberEventHistoryService memberEventHistoryService;
 
     @RequestMapping("/listMember")
     public String toIndex(Member member,HttpServletRequest request, Model model){
@@ -111,12 +116,11 @@ public class MemberController {
     @RequestMapping("/memberDetail")
     public String getMemberDetail(Member member,HttpServletRequest request, Model model){
 
-//        Member member1 = new Member();
-//        member1.setMemberName("测试名称");
-//        member1.setGender(Gender.MAN.getDesc());
-//        member1.setAge(60);
-//        member1.setStatus(1);
         model.addAttribute("member", memberService.getMemberById(member));
+        MemberEventHistory memberEventHistory = new MemberEventHistory();
+        memberEventHistory.setMemberId(member.getMemberId());
+        model.addAttribute("memberEvent", memberEventHistoryService.getMemberEventHistoryList(memberEventHistory));
+
         return "member_detail";
 
     }

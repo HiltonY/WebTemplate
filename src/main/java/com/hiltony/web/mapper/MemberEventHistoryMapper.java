@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface MemberEventHistoryMapper {
 
-    List<MemberEventHistory> getMemberEventHistoryList(Member member);
+    List<MemberEventHistory> getMemberEventHistoryList(MemberEventHistory memberEventHistory);
 
     MemberEventHistory addMemberEventHistory(MemberEventHistory memberEventHistory);
 }

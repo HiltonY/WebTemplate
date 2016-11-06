@@ -14,7 +14,7 @@ public class MemberEventHistory {
     private String title;
     private String eventDesc;
     private Date eventTime;
-    private Integer type;//事件类型,1:通知，2:警告
+    private Integer eventType;//事件类型,1:通知，2:警告
 
     public Long getMemberId() {
         return memberId;
@@ -56,12 +56,12 @@ public class MemberEventHistory {
         this.eventTime = eventTime;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getEventType() {
+        return eventType;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setEventType(Integer eventType) {
+        this.eventType = eventType;
     }
 }
 

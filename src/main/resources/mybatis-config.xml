@@ -8,5 +8,6 @@
         <typeAlias type="com.hiltony.web.model.UserInfo" alias="UserInfo"/>
         <typeAlias type="com.hiltony.web.model.Member" alias="Member"/>
         <typeAlias type="com.hiltony.web.model.Location" alias="Location"/>
+        <typeAlias type="com.hiltony.web.model.MemberEventHistory" alias="MemberEventHistory"/>
     </typeAliases>
 </configuration>
