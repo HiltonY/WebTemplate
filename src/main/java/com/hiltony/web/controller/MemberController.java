@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 /**
@@ -119,6 +117,15 @@ public class MemberController {
         model.addAttribute("member", memberService.getMemberById(member));
         MemberEventHistory memberEventHistory = new MemberEventHistory();
         memberEventHistory.setMemberId(member.getMemberId());
+        List<MemberEventHistory> memberEventHistoryList = memberEventHistoryService.getMemberEventHistoryList(memberEventHistory);
+        TreeMap<String,List<MemberEventHistory>> eventMap = new TreeMap<String,List<MemberEventHistory>>();
+        SimpleDateFormat sdf  = new SimpleDateFormat("YYYY-MM-DD");
+        for (MemberEventHistory event:memberEventHistoryList){
+            eventMap.putIfAbsent(sdf.format(event.getEventTime()), new ArrayList<>());
+            eventMap.get(sdf.format(event.getEventTime())).add(event);
+        }
+        NavigableMap rmap = eventMap.descendingMap();
+
         model.addAttribute("memberEvent", memberEventHistoryService.getMemberEventHistoryList(memberEventHistory));
 
         return "member_detail";

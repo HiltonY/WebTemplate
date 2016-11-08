@@ -16,6 +16,7 @@
                 memberId = #{memberId}
             </if>
         </where>
+        ORDER BY eventtime DESC
     </select>
 
 </mapper>
