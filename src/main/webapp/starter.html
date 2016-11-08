@@ -47,7 +47,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="/js/member/member_detail.js"></script>
   <!--轨迹页面js-->
   <script src="/js/track/track.js"></script>
-  <![endif]-->
+  <!--echart-->
+  <script src="/js/echarts/dist/echarts.js"></script>
 
     <script type="text/javascript">
 
@@ -61,6 +62,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             });
         }
         $(document).ready(function () {
+          // 路径配置
+          require.config({
+            paths: {
+              echarts: '/js/echarts/dist'
+            }
+          });
+
             $(".select2").select2();
 
             $("#member").click(
@@ -71,6 +79,62 @@ scratch. This page gets rid of all links and provides the needed markup only.
 //                        $("#member-detail-box").load("/member/memberDetail");
                     }
             );
+
+          $("#stat").click(
+                  function () {
+                    $("#main_context").empty();
+                    $("#main_context").load("/statistics/total",function(response,status){
+                      if(status=='success'){
+
+                      }
+                    });
+//                    window.onload()=test;
+                    // 使用
+                    require(
+                            [
+                              'echarts',
+                              'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
+                            ],
+                            function (ec) {
+                              // 基于准备好的dom，初始化echarts图表
+                              var chart1 = ec.init($("#main_context"));
+
+                              var option1 = {
+                                tooltip: {
+                                  show: true
+                                },
+                                legend: {
+                                  data:['销量']
+                                },
+                                xAxis : [
+                                  {
+                                    type : 'category',
+                                    data : ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                                  }
+                                ],
+                                yAxis : [
+                                  {
+                                    type : 'value'
+                                  }
+                                ],
+                                series : [
+                                  {
+                                    "name":"销量",
+                                    "type":"bar",
+                                    "data":[5, 20, 40, 10, 10, 20]
+                                  }
+                                ]
+                              };
+
+                              // 为echarts对象加载数据
+                              chart1.setOption(option1);
+                            }
+                    );
+
+
+
+                  }
+          );
           $("#track-intime").click(
                   function () {
                         $("#main_context").empty();
@@ -330,6 +394,7 @@ desired effect
             <li id="track-history"><a href="#track-history">历史轨迹</a></li>
           </ul>
         </li>
+        <li id="stat"><a href="#stat"><i class="fa fa-link"></i> <span>统计信息</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

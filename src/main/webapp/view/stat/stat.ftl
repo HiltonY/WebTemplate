@@ -57,6 +57,59 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- Content Wrapper. Contains page content -->
 <div>
+    <#--echart配置-->
+    <#--<script src="/js/echarts/dist/echarts.js"></script>-->
+    <#--<script type="text/javascript">-->
+        <#--// 路径配置-->
+        <#--require.config({-->
+            <#--paths: {-->
+                <#--echarts: '/js/echarts/dist'-->
+            <#--}-->
+        <#--});-->
+        <#--// 使用-->
+        <#--require(-->
+                <#--[-->
+                    <#--'echarts',-->
+                    <#--'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载-->
+                <#--],-->
+                <#--function (ec) {-->
+                    <#--// 基于准备好的dom，初始化echarts图表-->
+                    <#--var chart1 = ec.init(document.getElementById('chart1'));-->
+
+                    <#--var option1 = {-->
+                        <#--tooltip: {-->
+                            <#--show: true-->
+                        <#--},-->
+                        <#--legend: {-->
+                            <#--data:['销量']-->
+                        <#--},-->
+                        <#--xAxis : [-->
+                            <#--{-->
+                                <#--type : 'category',-->
+                                <#--data : ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]-->
+                            <#--}-->
+                        <#--],-->
+                        <#--yAxis : [-->
+                            <#--{-->
+                                <#--type : 'value'-->
+                            <#--}-->
+                        <#--],-->
+                        <#--series : [-->
+                            <#--{-->
+                                <#--"name":"销量",-->
+                                <#--"type":"bar",-->
+                                <#--"data":[5, 20, 40, 10, 10, 20]-->
+                            <#--}-->
+                        <#--]-->
+                    <#--};-->
+
+                    <#--// 为echarts对象加载数据-->
+                    <#--chart1.setOption(option1);-->
+                <#--}-->
+        <#--);-->
+    <#--</script>-->
+
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <#--main标题-->
@@ -74,123 +127,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            <div id="member_list" class="col-md-6">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">客户列表</h3>
-                    </div>
-                    <!-- general form elements -->
-                    <div class="box-body">
-                        <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                            <tr>
-                                <th>姓名</th>
-                                <th>性别</th>
-                                <th>年龄</th>
-                                <th>当前状态</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <#list memberList as item>
-                            <tr>
-                                <td><a href="javascript:setMemberDetail(${item.memberId})">${item.memberName}</a></td>
-                                <td>${item.gender}</td>
-                                <td>${item.age}</td>
-                                <td><#if item.status==1>正常<#else>预警</#if></td>
-                            </tr>
-                            </#list>
-                        </table>
-                    </div>
-                </div>
+            <div id="chart1" style="height:400px">
+
             </div>
-            <div id="member_detail" class="col-md-6">
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">客户详情</h3>
-                    </div>
-                    <!-- general form elements -->
-                <#--col-lg-6-->
-                    <div id="member-detail-box" class="box-body">
+            <div id="chart2" class="col-md-6">
 
-                        <div id="member-detail-context" class="nav-tabs-custom">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#activity" data-toggle="tab">基本信息</a></li>
-                                <li><a href="#timeline" data-toggle="tab">历史记录</a></li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="active tab-pane" id="activity">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <label class="col-lg-12">姓名</label>
-                                            <input id="memberName" type="text" class="form-control" value="${member.memberName}"
-                                                   placeholder="点击输入 ...">
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <label class="col-lg-12">性别</label>
-
-                                            <select id="gender" class="form-control select2" style="width: 100%;">
-                                                <option selected="selected" value=1>男</option>
-                                                <option value=2>女</option>
-                                            </select>
-                                            <#--<input id="gender" type="text" class="form-control" placeholder="Enter ..." disabled>-->
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <label class="col-lg-12">出生日期</label>
-                                            <div class="input-group date">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-calendar"></i>
-                                                </div>
-                                                <input type="text" class="form-control pull-right" id="datepicker" placeholder="点击输入 ...">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <label class="col-lg-12">联系电话</label>
-                                            <input id="phoneNumber" type="text" class="form-control" placeholder="点击输入 ...">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <label class="col-lg-12">身份证号</label>
-                                            <input id="certificate" type="text" class="form-control" placeholder="点击输入 ..." >
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <label class="col-lg-12">联系地址</label>
-                                            <input id="address" type="text" class="form-control" placeholder="点击输入 ..." >
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <label class="col-lg-12"></label>
-                                            <button id="addMember" type="submit" class="btn btn-info pull-right"
-                                                    onclick="addMember()">新增
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- /.box-body -->
-
-                                <!-- /.tab-pane -->
-                                <div class="tab-pane" id="timeline">
-                                    <!-- The timeline -->
-
-                                </div>
-                                <!-- /.tab-pane -->
-
-                            </div>
-                            <#--<div class="tab-content">-->
-
-                            <#--</div>-->
-                            <!-- /.tab-content -->
-                        </div>
-                        <!-- /.nav-tabs-custom -->
-
-                    </div>
-                </div>
             </div>
         </div>
     </section>

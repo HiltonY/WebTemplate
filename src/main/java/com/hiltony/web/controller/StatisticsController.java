@@ -15,7 +15,7 @@ public class StatisticsController {
 
     @RequestMapping("/total")
     public String bootstrap(HttpServletRequest request, Model model){
-        return "bootstrap";
+        return "stat/stat";
     }
 
 
