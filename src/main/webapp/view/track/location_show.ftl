@@ -10,9 +10,8 @@
     </h1>
 <#--右侧快捷导航栏-->
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> 轨迹监控</a></li>
+        <li class="active">历史轨迹</li>
     </ol>
 </section>
 <section class="content">

@@ -80,14 +80,11 @@ desired effect
     <section class="content-header">
         <#--main标题-->
         <h1>
-            Data Tables
-            <small>advanced tables</small>
+            客户管理
         </h1>
             <#--右侧快捷导航栏-->
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li class="active">客户管理</li>
         </ol>
     </section>
     <!-- Main content -->

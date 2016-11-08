@@ -138,6 +138,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
           $("#track-intime").click(
                   function () {
                         $("#main_context").empty();
+                        $("#main_context").load("/track/intime");
+
+//                      $("#track_history_detail").empty();
+//                      $("#track_history_detail").load("/track/track_history_detail");
+//                        $(".select2").select2();
+
+                  }
+
+          );
+          $("#track-history").click(
+                  function () {
+                        $("#main_context").empty();
                         $("#main_context").load("/track/history");
 
 //                      $("#track_history_detail").empty();

@@ -3,7 +3,7 @@
  *
  */
 
-function clickPositionPoint(_this,floor,xPosition,yPosition,sampleTime,status) {
+function clickPositionPoint(_this,floor,xPosition,yPosition,sampleTime,status,memberName) {
     // $(_this).parent().children(".point").each(
     //     function () {
     //         $(this).css({width:'10px',height:'10px'});
@@ -16,5 +16,6 @@ function clickPositionPoint(_this,floor,xPosition,yPosition,sampleTime,status) {
     $("#position"+floor).text("("+xPosition+","+yPosition+")");
     $("#time"+floor).text(sampleTime);
     $("#status"+floor).text(status==0?'预警':'正常');
+    $("#memberName"+floor).text(memberName);
 
 }

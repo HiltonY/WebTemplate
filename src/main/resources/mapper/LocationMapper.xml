@@ -79,7 +79,8 @@
 
 
     <select id="getIntimeLocationList" parameterType="Location" resultType="Location">
-        SELECT * from location_intime
+        SELECT l.*,m.memberName from location_intime l
+        JOIN member_info m on l.memberId=m.memberId
         <where>
             <if test="memberId!=null">
                 memberId=#{memberId}

@@ -9,6 +9,7 @@ import java.util.Date;
 public class Location {
 
     private Long memberId;
+    private String memberName;
     private Integer floor;
     private Integer xPosition;
     private Integer yPosition;
@@ -18,6 +19,14 @@ public class Location {
     private Long stayTime;//停留时间，以分钟计数
     private Integer status;//采样状态1:正常，2:预警
 
+
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
 
     public Long getStayTime() {
         return stayTime;
